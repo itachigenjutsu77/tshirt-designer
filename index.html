@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Designer - Create Your Perfect Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="logo">T-Shirt Designer</h1>
+                    <nav class="nav">
+                        <a href="#" class="nav-link">Templates</a>
+                        <a href="#" class="nav-link">Upload</a>
+                        <a href="#" class="nav-link">Save</a>
+                    </nav>
+                    <button class="btn btn-primary" id="save-design">Save Design</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Design Your Perfect T-Shirt</h2>
+                    <p class="hero-description">
+                        Create stunning t-shirt designs with our intuitive drag-and-drop interface. 
+                        Upload your own graphics or choose from our collection of cool designs.
+                    </p>
+                    <button class="btn btn-hero" id="start-designing">Start Designing</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Design Area -->
+        <main class="main-content">
+            <div class="container">
+                <div class="design-workspace">
+                    <!-- Left Panel - Design Elements -->
+                    <div class="panel left-panel">
+                        <h3 class="panel-title">Design Elements</h3>
+                        
+                        <!-- Upload Section -->
+                        <div class="upload-section">
+                            <h4>Upload Your Design</h4>
+                            <div class="upload-area" id="upload-area">
+                                <div class="upload-content">
+                                    <div class="upload-icon">📁</div>
+                                    <p>Drop files here or click to upload</p>
+                                    <input type="file" id="file-input" accept="image/*" multiple>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Predefined Designs -->
+                        <div class="designs-section">
+                            <h4>Cool Designs</h4>
+                            <div class="design-grid" id="design-grid">
+                                <!-- Designs will be populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Text Tools -->
+                        <div class="text-section">
+                            <h4>Add Text</h4>
+                            <input type="text" id="text-input" placeholder="Enter your text">
+                            <div class="text-controls">
+                                <select id="font-family">
+                                    <option value="Arial">Arial</option>
+                                    <option value="Helvetica">Helvetica</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                </select>
+                                <input type="number" id="font-size" value="24" min="12" max="72">
+                                <input type="color" id="text-color" value="#000000">
+                                <button id="add-text" class="btn btn-small">Add Text</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Panel - T-Shirt Canvas -->
+                    <div class="panel center-panel">
+                        <div class="tshirt-container">
+                            <div class="tshirt-selection">
+                                <button class="tshirt-btn active" data-color="white">White</button>
+                                <button class="tshirt-btn" data-color="black">Black</button>
+                                <button class="tshirt-btn" data-color="red">Red</button>
+                                <button class="tshirt-btn" data-color="blue">Blue</button>
+                                <button class="tshirt-btn" data-color="green">Green</button>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="tshirt-canvas" width="400" height="500"></canvas>
+                                <div class="design-area" id="design-area">
+                                    <!-- Draggable elements will be placed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel - Properties -->
+                    <div class="panel right-panel">
+                        <h3 class="panel-title">Properties</h3>
+                        <div class="properties-content" id="properties-content">
+                            <p class="empty-state">Select an element to edit its properties</p>
+                        </div>
+                        
+                        <div class="layers-section">
+                            <h4>Layers</h4>
+                            <div class="layers-list" id="layers-list">
+                                <!-- Layers will be populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 T-Shirt Designer. Create amazing designs with ease.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Processing your design...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
